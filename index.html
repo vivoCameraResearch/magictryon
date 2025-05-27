@@ -1,1 +1,379 @@
-Hellow
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on.">
+  <meta name="keywords" content="Video Virtual Try-on, Diffusion Transformer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/tryon/tryon_icon_2.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title" style="display: flex; align-items: baseline;">
+            <img src="./static/images/tryon/tryon_icon_2.png" alt="MagicTryOn Icon" style="width: 2em; height: 2em; vertical-align: baseline; margin-right: -1.9em;">
+            MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on
+          </h1> -->
+          <h1 class="title is-1 publication-title">MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=-AHPok4AAAAJ&hl=zh-CN">Guangyuan Li</a><sup>1,2&dagger;</sup>,</span>
+            <span class="author-block">
+              <a href="">Siming Zheng</a><sup>2&dagger;</sup>,</span>
+            <span class="author-block">
+              <a href="">Hao Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Jinwei Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Junsheng Luan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Binkai Ou</a><sup>3</sup>
+            </span><br>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=KKBFG6kAAAAJ">Lei Zhao</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Bo Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=85QJ_i4AAAAJ">Peng-Tao Jiang</a><sup>2*</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>College of Computer Science and Technology, Zhejiang University</span><br>
+            <span class="author-block"><sup>2</sup>vivo Mobile Communication Co., Ltd</span><br>
+            <span class="author-block"><sup>3</sup>Innovation Research & Development, BoardWare Information System Limited</span><br>
+            <span class="author-block"><sup>&dagger; These authors contributed equally, * Corresponding authors</sup></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid02.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid03.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid04.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid05.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid06.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/vivid07.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video Virtual Try-On (VVT) aims to simulate the natural appearance of garments across consecutive video frames, capturing their dynamic variations and interactions with human body motion. However, current VVT methods still face challenges in terms of spatiotemporal consistency and garment content preservation.
+            First, they use diffusion models based on the U-Net, which are limited in their expressive capability and struggle to reconstruct complex details. Second, they adopt a separative modeling approach for spatial and temporal attention, which hinders the effective capture of structural relationships and dynamic consistency across frames. Third, their expression of garment details remains insufficient, affecting the realism and stability of the overall synthesized results, especially during human motion. 
+            To address the above challenges, we propose <b>MagicTryOn</b>, a video virtual try-on framework built upon the large-scale video diffusion Transformer.
+            We replace the U-Net architecture with a diffusion Transformer and combine full self-attention to jointly model the spatiotemporal consistency of videos. 
+            We design a coarse-to-fine garment preservation strategy. 
+            The coarse strategy integrates garment tokens during the embedding stage, while the fine strategy incorporates multiple garment-based conditions, such as semantics, textures, and contour lines during the denoising stage.
+            Moreover, we introduce a mask-aware loss to further optimize garment region fidelity.
+            Extensive experiments on both image and video try-on datasets demonstrate that our method outperforms existing SOTA methods in comprehensive evaluations and generalizes to in-the-wild scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+    
+        <!-- 图片指令 -->
+        <img src="./static/images/tryon/Fig_model.png" alt="Description of image" style="max-width: 100%; height: auto;">
+    
+        <!-- p标签指令 -->
+        <div class="content has-text-justified">
+        <p>
+          The overall pipeline of MagicTryOn. 
+          The input includes person videos, pose representations, clothing-agnostic masks, and target garment images. 
+          Videos and poses are encoded into agnostic and pose latents by the Wan Video Encoder, while masks are resized into mask latents. 
+          These, combined with random noise, are fed into the DiT backbone. Meanwhile, garment images yield multi-level features, including text, CLIP, garment, and line tokens. 
+          The garment token provides coarse guidance via sequence concatenation, and all tokens are injected into DiT blocks for fine-grained conditioning. 
+          After <i>n</i> denoising steps, the DiT backbone produces try-on latents, decoded into video by the Wan Video Decoder.
+        </p>
+      </div>
+    
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div style="text-align: center;">
+      <h2 class="title is-3">Experiments</h2>
+      <br>
+  </div>
+    
+    <div class="columns is-centered">
+      
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tryon/dance01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/tryon/dance02.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+    <div class="content has-text-justified">
+      <p>
+        Qualitative comparisons of different methods under large motion scenarios. 
+        Virtual try-on with large body movements—such as dancing—is particularly challenging, as it requires not only garment consistency but also spatiotemporal coherence. 
+        To evaluate performance in such cases, we select two dancing videos from Pexels website.
+      </p>
+    </div>
+        
+        <!-- p标签指令 -->
+
+    <!-- 图片指令 -->
+    <img src="./static/images/tryon/image_result.png" alt="Description of image" style="max-width: 100%; height: auto;">
+    <div class="content has-text-justified">
+      <p>
+        Qualitative comparison of image virtual try-on results on the VITON-HD (1-st and 2-nd row) and DressCode (3-rd row) datasets.
+      </p>
+    </div>
+    
+    
+      
+    <!--/ Paper video. -->
+  </div>
+
+
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <!-- <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre> -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/GuangYuanKK" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/vivoCameraResearch/magictryon">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
