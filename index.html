@@ -39,6 +39,15 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+  .gradient-text {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ffcc70);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+  }
+  </style>
 </head>
 <body>
 
@@ -54,7 +63,9 @@
             <img src="./static/images/tryon/tryon_icon_2.png" alt="MagicTryOn Icon" style="width: 2em; height: 2em; vertical-align: baseline; margin-right: -1.9em;">
             MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on
           </h1> -->
-          <h1 class="title is-1 publication-title">MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on</h1>
+          <h1 class="title is-1 publication-title">
+            <span class="gradient-text">MagicTryOn:</span> Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on
+          </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?user=-AHPok4AAAAJ&hl=zh-CN">Guangyuan Li</a><sup>1,2&dagger;</sup>,</span>
@@ -94,7 +105,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2505.21325"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -103,7 +114,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2505.21325"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -123,7 +134,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://github.com/vivoCameraResearch/Magic-TryOn/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -333,12 +344,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <!-- <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre> -->
+    <pre><code>@misc{li2025magictryon,
+      title={MagicTryOn: Harnessing Diffusion Transformer for Garment-Preserving Video Virtual Try-on}, 
+      author={Guangyuan Li and Siming Zheng and Hao Zhang and Jinwei Chen and Junsheng Luan and Binkai Ou and Lei Zhao and Bo Li and Peng-Tao Jiang},
+      year={2025},
+      eprint={2505.21325},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.21325}, 
+}</code></pre>
   </div>
 </section>
 
